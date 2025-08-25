@@ -155,8 +155,11 @@ button:focus {
 }
 
 .logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
+  max-height: 38px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  margin-top: 8px;
 }
 
 .navbar-nav .nav-link {
