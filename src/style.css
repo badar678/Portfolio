@@ -140,6 +140,8 @@ button:focus {
   opacity: 0.9 !important;
 }
 
+
+
 @media (max-width: 767px) {
   .navbar {
     padding: 1rem 2rem !important;
@@ -255,6 +257,10 @@ button:focus {
 
 .home-header {
   padding-top: 80px !important;
+}
+
+.home-headers {
+   padding-top: 0px !important;
 }
 
 .home-section {
@@ -743,4 +749,168 @@ button:focus {
 }
 .fork-btn-inner::after {
   display: none !important;
+}
+
+/* Custom underline for Services dropdown text */
+.navbar-nav .dropdown-toggle > span {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-nav .dropdown-toggle > span::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0;
+  border-radius: 16px;
+  background: #c95bf5;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  z-index: 1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar-nav .dropdown-toggle:hover > span::after,
+.navbar-nav .dropdown-toggle:focus > span::after {
+  width: 100%;
+}
+
+/* Hide Bootstrap's default dropdown arrow underline */
+.navbar-nav .dropdown-toggle::after {
+  border: none !important;
+  background: transparent !important;
+  color: transparent !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 767px) {
+  /* ...existing mobile styles... */
+
+  .home-section {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* --------- */
+/* MernStack Section (Desktop & Mobile) */
+/* --------- */
+.mern-section {
+  position: relative !important;
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+
+/* Use same content padding and text styles as About */
+.mern-section .home-content {
+  padding: 9rem 0 2rem !important;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.mern-section .home-headers {
+  padding-top: 0px !important;
+}
+
+.mern-section .heading {
+  font-size: 2.4em !important;
+  padding-left: 50px !important;
+}
+
+.mern-section .home-about-body {
+  padding-top: 50px;
+  font-size: 1.2em !important;
+  text-align: left;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 767px) {
+  .mern-section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .mern-section .home-content {
+    padding: 2rem 0 2rem !important;
+  }
+  .mern-section .heading {
+    font-size: 1.6em !important;
+    padding-left: 10px !important;
+    margin-top: 100px !important;
+  }
+  .mern-section .home-about-body {
+    padding-top: 20px !important;
+    font-size: 1em !important;
+  }
+  .mern-section .img-fluid {
+    margin-bottom: -110px !important;
+    margin-top: -10px !important;
+  }    
+
+}
+
+/* --------- */
+/* Wordpress Section (Desktop & Mobile) */
+/* --------- */
+.wordpress-section {
+  position: relative !important;
+  padding-top: 20px !important;
+  padding-bottom: 30px !important;
+  background-image: var(--section-background-color) !important;
+  color: white !important;
+}
+
+.wordpress-section .home-content {
+  padding: 9rem 0 2rem !important;
+  color: whitesmoke;
+  text-align: left;
+}
+
+.wordpress-section .home-headers {
+  padding-top: 0px !important;
+}
+
+.wordpress-section .heading {
+  font-size: 2.4em !important;
+  padding-left: 50px !important;
+}
+
+.wordpress-section .home-about-body {
+  padding-top: 50px;
+  font-size: 1.2em !important;
+  text-align: left;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 767px) {
+  .wordpress-section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+  .wordpress-section .home-content {
+    padding: 2rem 0 2rem !important;
+  }
+  .wordpress-section .heading {
+    font-size: 1.6em !important;
+    padding-left: 10px !important;
+    margin-top: 100px !important;
+  }
+  .wordpress-section .home-about-body {
+    padding-top: 20px !important;
+    font-size: 1em !important;
+  }
+  .wordpress-section .img-fluid {
+    max-height: 200px !important;
+    margin-bottom: -60px !important;
+    margin-top: 5px !important;
+  }    
 }

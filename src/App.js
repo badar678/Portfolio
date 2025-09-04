@@ -6,6 +6,8 @@ import About from "./components/About/About";
 import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
 import Resume from "./components/Resume/ResumeNew";
+import MernStack from "./components/Services/MernStack";
+import Wordpress from "./components/Services/WordPress";
 import {
   BrowserRouter as Router,
   Route,
@@ -39,6 +41,8 @@ function App() {
           <Route path="/project" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/mernstack" element={<MernStack />} />
+          <Route path="/wordpress" element={<Wordpress />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
         <Footer />

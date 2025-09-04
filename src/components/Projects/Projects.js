@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import editor from "../../Assets/Projects/codeEditor.png";
 import ecommerce from "../../Assets/Projects/e-commerce.png";
-import bitsOfCode from "../../Assets/Projects/project-management.png";
+import projectmanagement from "../../Assets/Projects/project-management.png";
+import portfolio from "../../Assets/Projects/portfolio.png";
 
 function Projects() {
   return (
@@ -31,7 +31,7 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={projectmanagement}
               isBlog={false}
               title="Project Management System"
               description="A full-stack MERN project management platform with role-based dashboards for CEO, Project Managers, Employees, and Clients. Features include project request & approval workflow, task assignments, progress tracking, and real-time reporting with charts."
@@ -42,12 +42,12 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={portfolio}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="Personal Portfolio"
+              description="A modern and responsive personal portfolio website built with React.js to showcase my projects, skills, resume, and GitHub activity. Designed with a clean UI, smooth navigation, and mobile-friendly layout."
+              ghLink="https://github.com/badar678/Portfolio"
+              // demoLink="https://editor.soumya-jit.tech/"              
             />
           </Col>
 

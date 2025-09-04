@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import NavDropdown from "react-bootstrap/NavDropdown"; // <-- Add this import
 import logo from "../Assets/badarlogo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import { ImBlog } from "react-icons/im";
+import { FaLaptopCode } from "react-icons/fa";
 import {
   AiFillStar,
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
-
 import { CgFileDocument } from "react-icons/cg";
 
 function NavBar() {
@@ -92,15 +92,32 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                href="https://soumyajitblogs.vercel.app/"
-                target="_blank"
-                rel="noreferrer"
+            {/* Services Dropdown */}
+            <NavDropdown
+              title={
+                <span>
+                  <FaLaptopCode style={{ marginBottom: "2px" }} /> Services
+                </span>
+              }
+              id="services-nav-dropdown"
+              // Removed onClick from NavDropdown to allow dropdown to open on all devices
+            >
+              <NavDropdown.Item
+                as={Link}
+                to="/mernstack"
+                onClick={() => updateExpanded(false)}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Blogs
-              </Nav.Link>
-            </Nav.Item>
+                MernStack
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/wordpress"
+                onClick={() => updateExpanded(false)}
+              >
+                Wordpress
+              </NavDropdown.Item>
+            </NavDropdown>
+            {/* ...existing code... */}
 
             <Nav.Item className="fork-btn">
               <Button
