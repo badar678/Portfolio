@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import NavDropdown from "react-bootstrap/NavDropdown"; // <-- Add this import
 import logo from "../Assets/badarlogo.png";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import { FaLaptopCode } from "react-icons/fa";
 import {
   AiFillStar,
   AiOutlineHome,
@@ -20,15 +18,18 @@ function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
+  useEffect(() => {
+    const scrollHandler = () => {
+      if (window.scrollY >= 20) {
+        updateNavbar(true);
+      } else {
+        updateNavbar(false);
+      }
+    };
 
-  window.addEventListener("scroll", scrollHandler);
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
 
   return (
     <Navbar
@@ -38,11 +39,12 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
-          <img src={logo} className="img-fluid logo" alt="brand" />
+        <Navbar.Brand as={Link} to="/" className="d-flex">
+          <img src={logo} className="img-fluid logo" alt="Badar logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
+          aria-label="Toggle navigation"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
           }}
@@ -92,38 +94,13 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* Services Dropdown */}
-            <NavDropdown
-              title={
-                <span>
-                  <FaLaptopCode style={{ marginBottom: "2px" }} /> Services
-                </span>
-              }
-              id="services-nav-dropdown"
-              // Removed onClick from NavDropdown to allow dropdown to open on all devices
-            >
-              <NavDropdown.Item
-                as={Link}
-                to="/mernstack"
-                onClick={() => updateExpanded(false)}
-              >
-                MernStack
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={Link}
-                to="/wordpress"
-                onClick={() => updateExpanded(false)}
-              >
-                Wordpress
-              </NavDropdown.Item>
-            </NavDropdown>
-            {/* ...existing code... */}
-
             <Nav.Item className="fork-btn">
               <Button
                 href="https://github.com/soumyajit4419/Portfolio"
                 target="_blank"
                 className="fork-btn-inner"
+                rel="noopener noreferrer"
+                aria-label="View portfolio source on GitHub"
               >
                 <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
                 <AiFillStar style={{ fontSize: "1.1em" }} />

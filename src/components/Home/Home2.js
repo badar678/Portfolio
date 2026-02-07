@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/badarAvatar.png";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -18,17 +18,23 @@ function Home2() {
             <h1 style={{ fontSize: "2.6em" }}>
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
-          <p className="home-about-body">
+         <p className="home-about-body">
   I fell in love with programming and I keep learning and improving
   every day. 🤞
   <br />
-  <br />I specialize in the 
+  <br />I am a 
   <i>
-    <b className="purple"> MERN Stack (MongoDB, Express.js, React.js, Node.js) </b>
+    <b className="purple"> Front-End Developer </b>
   </i>
   <br />
   <br />
-  My field of interest is building modern &nbsp;
+  I am also continuously expanding my skills in the 
+  <i>
+    <b className="purple">MERN Stack (MongoDB, Express.js, React.js, Node.js)</b>
+  </i>
+  <br />
+  <br />
+  My field of interest is building modern&nbsp;
   <i>
     <b className="purple">Web Applications and Products </b> and also creating 
     <b className="purple"> WordPress Websites. </b>
@@ -48,10 +54,17 @@ function Home2() {
   </i>
 </p>
 
+
           </Col>
           <Col md={4} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img 
+                src={myImg}
+                className="img-fluid"
+                alt="Badar avatar"
+                loading="lazy"
+                decoding="async"
+              />
             </Tilt>
           </Col>
         </Row>
@@ -68,6 +81,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Badar on GitHub"
                 >
                   <AiFillGithub />
                 </a>
@@ -78,6 +92,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Badar on Twitter"
                 >
                   <AiOutlineTwitter />
                 </a>
@@ -88,6 +103,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  aria-label="Badar on LinkedIn"
                 >
                   <FaLinkedinIn />
                 </a>
@@ -98,6 +114,7 @@ function Home2() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour home-social-icons"
+                  aria-label="Badar on Instagram"
                 >
                   <AiFillInstagram />
                 </a>
